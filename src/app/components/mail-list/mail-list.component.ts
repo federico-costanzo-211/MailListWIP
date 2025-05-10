@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Mail from "../../types/mail-type";
 
 @Component({
@@ -8,21 +8,5 @@ import Mail from "../../types/mail-type";
   styleUrl: './mail-list.component.scss'
 })
 export class MailListComponent {
-  items: Mail[] = [
-    {
-      email: "placeholder@gmail.com",
-      name: "Placeholder",
-      description: "placeholder",
-    },
-    {
-      email: "placeholder2@gmail.com",
-      name: "placeholder",
-      description: "placeholder",
-    },
-    {
-      email: "placeholder3@gmail.com",
-      name: "placeholder",
-      description: "placeholder",
-    }
-  ]
+  @Input() items: Mail[];
 }

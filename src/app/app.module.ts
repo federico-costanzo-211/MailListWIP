@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MailListComponent } from './components/mail-list/mail-list.component';
 import { MailListItemComponent } from './components/mail-list-item/mail-list-item.component';
+import { MainPageComponent } from './pages/main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MailListComponent,
     MailListItemComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,

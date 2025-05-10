@@ -1,7 +1,8 @@
 type Mail = {
+    id: number,
     email: String,
-    name: String
-    description: String
+    name: String,
+    description: String,
 }
 
 export default Mail;
