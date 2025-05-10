@@ -3,14 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { MailListComponent } from './components/mail-list/mail-list.component';
+import { MailListItemComponent } from './components/mail-list-item/mail-list-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MailListComponent,
+    MailListItemComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
