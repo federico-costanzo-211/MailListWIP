@@ -1,16 +1,16 @@
-.item-list {
+form {
     display: flex;
     flex-direction: column;
 
     & > * {
-        margin-bottom: 10px;
-        
-        &:last-child {
+        margin: 5px;
+
+        &:first-child {
             margin-top: 0px;
         }
     }
-}
 
-button {
-    max-width: 100px;
+    button {
+        max-width: 50px;
+    }
 }

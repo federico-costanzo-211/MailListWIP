@@ -36,11 +36,33 @@ export class MailItemService {
     return this.itemList[id];
   }
 
+  addItem(newItem: Mail){
+    let highestId = 0;
+    
+    this.itemList.reduce(
+      (prev: Mail, value: Mail, index: number, array: Mail[]): Mail => {
+        if (!prev) {}
+        else {
+          if (prev.id < value.id) {
+            highestId = value.id;
+          }
+        }
+
+        return value;
+      }
+    );
+
+    newItem.id = highestId + 1;
+    this.itemList.push(newItem);
+  }
+
   editItem(id: number, newItem: Mail): void {
     if (!this.itemList.find((value) => { return value.id == id })){
       throw new Error("Item not found: Wrong ID.");
-    } else {
-      this.itemList[id] = newItem;
+    } else {      
+      this.itemList[
+        this.itemList.findIndex((value) => { return value.id == id })
+      ] = newItem;
     }
   }
 

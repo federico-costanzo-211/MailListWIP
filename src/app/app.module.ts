@@ -11,6 +11,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { EditPageComponent } from './pages/edit-page/edit-page.component';
 
 import { MailItemService } from './services/mail-item.service';
+import { AddPageComponent } from './pages/add-page/add-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MailItemService } from './services/mail-item.service';
     MailListItemComponent,
     MainPageComponent,
     EditPageComponent,
+    AddPageComponent,
   ],
   imports: [
     BrowserModule,
