@@ -26,6 +26,8 @@ export class MailItemService {
     }
   ];
 
+  //------------------------------
+
   getAllItems(): Mail[] {
     return this.itemList;
   }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router }  from "@angular/router";
 import Mail from '../../types/mail-type';
 
@@ -11,14 +11,19 @@ import Mail from '../../types/mail-type';
 
 export class MailListItemComponent {
   @Input() item: Mail;
+  @Output() deletion = new EventEmitter<number>()
 
   constructor(private router: Router){}
 
-  openEditItem(): void{
+  openEditItem(): void {
     this.router.navigate(['/edit'],
       {
         queryParams: { id: this.item.id.toString() }
       }
     )
+  }
+
+  deleteItem(): void {
+    this.deletion.emit(this.item.id);
   }
 }

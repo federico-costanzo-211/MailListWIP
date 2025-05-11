@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
+import { MailItemService } from '../../services/mail-item.service';
 import Mail from "../../types/mail-type";
 
 @Component({
@@ -8,5 +10,22 @@ import Mail from "../../types/mail-type";
   styleUrl: './mail-list.component.scss'
 })
 export class MailListComponent {
-  @Input() items: Mail[];
+
+  itemList: Mail[] = [];
+  mailItemService: MailItemService = inject(MailItemService);
+  
+  constructor(){
+    this.fetchItems();
+  }
+
+  //-------------------------------
+
+  fetchItems(){
+    this.itemList = this.mailItemService.getAllItems();
+  }
+ 
+  deleteItem(id: number){
+    this.mailItemService.deleteItem(id);
+    this.fetchItems();
+  }
 }

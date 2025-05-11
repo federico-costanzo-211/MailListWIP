@@ -1,3 +1,5 @@
 <div class="item-list">
-    <app-mail-list-item *ngFor="let listItem of items" [item]="listItem"></app-mail-list-item>
+    <app-mail-list-item 
+        *ngFor="let item of itemList" [item]="item" (deletion)="deleteItem($event)">
+    </app-mail-list-item>
 <div>

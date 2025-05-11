@@ -10,10 +10,4 @@ import { MailItemService } from '../../services/mail-item.service';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
-  itemList: Mail[] = [];
-  mailItemService: MailItemService = inject(MailItemService);
-
-  constructor(){
-    this.itemList = this.mailItemService.getAllItems();
-  }
 }
