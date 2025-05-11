@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router }  from "@angular/router";
 import Mail from '../../types/mail-type';
 
 @Component({
@@ -10,4 +11,14 @@ import Mail from '../../types/mail-type';
 
 export class MailListItemComponent {
   @Input() item: Mail;
+
+  constructor(private router: Router){}
+
+  openEditItem(): void{
+    this.router.navigate(['/edit'],
+      {
+        queryParams: { id: this.item.id.toString() }
+      }
+    )
+  }
 }

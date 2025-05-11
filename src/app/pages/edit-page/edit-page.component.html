@@ -1,0 +1,21 @@
+<form [formGroup]="editForm">
+    <label>
+        Email: 
+        <input formControlName="email" />
+    </label>
+    <p *ngIf="email?.invalid && email?.touched">Email required.</p>
+
+    <label>
+        Name: 
+        <input formControlName="name" />
+    </label>
+    <p *ngIf="name.invalid && name.touched">Name required.</p>
+
+    <label>
+        Description: 
+        <input formControlName="description" />
+    </label>
+    <p *ngIf="description.invalid && description.touched"></p>
+
+    <button type="submit">Edit</button>
+</form>
