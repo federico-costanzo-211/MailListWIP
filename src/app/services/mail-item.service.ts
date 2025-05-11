@@ -30,6 +30,10 @@ export class MailItemService {
     return this.itemList;
   }
 
+  getItem(id: number): Mail {
+    return this.itemList[id];
+  }
+
   editItem(id: number, newItem: Mail): void {
     if (!this.itemList[id]){
       throw new Error("Item not found: Wrong ID.");
