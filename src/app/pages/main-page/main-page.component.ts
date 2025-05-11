@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject} from '@angular/core';
+
 import Mail from '../../types/mail-type';
+import { MailItemService } from '../../services/mail-item.service';
 
 @Component({
   selector: 'app-main-page',
@@ -8,24 +10,10 @@ import Mail from '../../types/mail-type';
   styleUrl: './main-page.component.scss'
 })
 export class MainPageComponent {
-  items: Mail[] = [
-    {
-      id: 0,
-      email: "placeholder@gmail.com",
-      name: "Placeholder",
-      description: "placeholder",
-    },
-    {
-      id: 1,
-      email: "placeholder2@gmail.com",
-      name: "placeholder",
-      description: "placeholder",
-    },
-    {
-      id: 2,
-      email: "placeholder3@gmail.com",
-      name: "placeholder",
-      description: "placeholder",
-    }
-  ]
+  itemList: Mail[] = [];
+  mailItemService: MailItemService = inject(MailItemService);
+
+  constructor(){
+    this.itemList = this.mailItemService.getAllItems();
+  }
 }
