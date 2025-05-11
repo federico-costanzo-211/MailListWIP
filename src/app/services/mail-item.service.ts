@@ -35,7 +35,7 @@ export class MailItemService {
   }
 
   editItem(id: number, newItem: Mail): void {
-    if (!this.itemList[id]){
+    if (!this.itemList.find((value) => { return value.id == id })){
       throw new Error("Item not found: Wrong ID.");
     } else {
       this.itemList[id] = newItem;
@@ -43,12 +43,10 @@ export class MailItemService {
   }
 
   deleteItem(id: number): void {
-    if (!this.itemList[id]){
+    if (!this.itemList.find((value) => { return value.id == id })){
       throw new Error("Item not found: Wrong ID.");
     } else {
-      this.itemList.filter((value) => {
-        return value.id != id
-      })
+      this.itemList = this.itemList.filter((value) => { return value.id !== id });
     }
   }
 }
