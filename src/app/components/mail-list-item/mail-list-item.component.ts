@@ -18,7 +18,7 @@ export class MailListItemComponent {
   openEditItem(): void {
     this.router.navigate(['/edit'],
       {
-        queryParams: { id: this.item.id.toString() }
+        queryParams: { id: this.item.id }
       }
     )
   }

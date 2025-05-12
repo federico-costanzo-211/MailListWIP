@@ -1,6 +1,5 @@
-# MidProject
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+# MailList
+Progetto di metà corso di Angular CORSO 28 ITS
 
 ## Development server
 
