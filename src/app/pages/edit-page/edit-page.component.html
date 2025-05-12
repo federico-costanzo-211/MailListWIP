@@ -1,21 +1,23 @@
-<form [formGroup]="editForm" (ngSubmit)="onFormSubmit()">
-    <label>
-        Email: 
-        <input formControlName="email" />
-    </label>
-    <p *ngIf="email?.invalid && email?.touched">Email required.</p>
-
-    <label>
-        Name: 
-        <input formControlName="name" />
-    </label>
-    <p *ngIf="name.invalid && name.touched">Name required.</p>
-
-    <label>
-        Description: 
-        <input formControlName="description" />
-    </label>
-    <p *ngIf="description.invalid && description.touched"></p>
-
-    <button type="submit" [disabled]="editForm.invalid">Edit</button>
-</form>
+<div id="edit-container">
+    <form [formGroup]="editForm" (ngSubmit)="onFormSubmit()">
+        <label>
+            Email: 
+            <input formControlName="email" />
+        </label>
+        <p *ngIf="email?.invalid && email?.touched">Email required.</p>
+    
+        <label>
+            Name: 
+            <input formControlName="name" />
+        </label>
+        <p *ngIf="name.invalid && name.touched">Name required.</p>
+    
+        <label>
+            Description: 
+            <input formControlName="description" />
+        </label>
+        <p *ngIf="description.invalid && description.touched"></p>
+    
+        <button type="submit" [disabled]="editForm.invalid">Edit</button>
+    </form>
+</div>

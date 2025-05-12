@@ -1,7 +1,13 @@
 .item-list {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+  
+    border-style: solid;
+    border-radius: 10px;
 
+    max-width: max(50vw, 500px);
+    
     & > * {
         margin-bottom: 10px;
         
